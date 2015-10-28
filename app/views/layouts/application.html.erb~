@@ -21,6 +21,12 @@
 	<li><a href="http://www..../faq">Questions</a></li>
 	<li><a href="http://www..../news">News</a></li>
 	<li><a href="http://www..../contact">Contact</a></li>
+	<% if @cart %>
+	  <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
+  	    <%= render @cart %>
+          <% end %>
+	  </div>
+	<% end %>
     </ul>
   </div>
   <div id="main">
